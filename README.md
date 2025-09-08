@@ -52,7 +52,11 @@ Archivos relacionados:
 - `Registro.h` — Declaración de funciones públicas para generar el reporte
 
 ### Análisis (Sofia Martinez Cisneros)
-*(Aquí Sofia agregará su descripción del módulo)*
+Implementé la parte de identificación y clasificación de los puertos abiertos detectados durante el escaneo de red asignando el nombre de servicio a cada puerto y de acuerdo a la lista predefinida se considera sospechoso o no.
+
+Traduce el número de puerto a su servicio asignado, evalúa cada puerto abierto según un nivel de sensibilidad (bajo, medio o alto) marcando como sospechosos los que representan un riesgo en la seguridad.
+
+Este módulo está compuesto por los archivos Analisis.cpp y su encabezado Analisis.h (depende de la estructura Puerto definida en Escaneo.h)
 
 ## Cómo usar el módulo de Escaneo
 El modulo de escaneo se utiliza dentro del programa principal para obtener el estado real de los puertos TCP, el como funciona es mediante la función "inicializarRed()" antes de comenzar el escaneo para poder preparar la librería Winsock.
@@ -65,6 +69,7 @@ Después llama a la función "escanearPuertos()" después de haber pasado por lo
 Después de esto, este modulo revisa los resultados en la estructura de "Puerto" donde la función "finalizarRed()" es llamada para liberar los recursos de la misma red y en automático valida la dirección IP ingresada, verifica cada puerto que fue seleccionado o cada puerto del rango especificado y checa la clasificación del estado de cada puerto.
 
 Es necesario decir que realmente el modulo no requiere una configuración adicional, solo es de asegurare de inicializar la red antes de escanear y cerrarla al final del proceso.
+
 ## Cómo usar el módulo de Registro
 El módulo de **Registro** se utiliza dentro del programa principal después de realizar el escaneo de puertos y el análisis de sospechosos.
 
@@ -83,3 +88,5 @@ Pasos para usarlo:
 No requiere configuración adicional; solo asegurarse de que se llame después de tener los resultados del escaneo.
 
 ## Cómo usar el módulo de Análisis
+Se utiliza desde el programa principal, asegurarte de tener una lista de resultados del escaneo representados como estructuras _Puerto_ (contienen el numero del puerto), su estado y un campo booleano _sospechoso_
+Primero, llamar a la función _marcarSospechosos_, pasándole el arreglo de puertos, la cantidad de elementos y un nivel de sensibilidad del 1 al 3 según qué tan estricto se necesita que sea el análisis. Después llamamos a la funcion _servicioDePuerto_ para traducir el número de cada puerto a su nombre de servicio conocido y mostrar esta información junto con el estado y si fue marcado como sospechoso.
