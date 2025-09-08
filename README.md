@@ -56,7 +56,7 @@ Implementé la parte de identificación y clasificación de los puertos abiertos
 
 Traduce el número de puerto a su servicio asignado, evalúa cada puerto abierto según un nivel de sensibilidad (bajo, medio o alto) marcando como sospechosos los que representan un riesgo en la seguridad.
 
-Este módulo está compuesto por los archivos Analisis.cpp y su encabezado Analisis.h (depende de la estructura Puerto definida en Escaneo.h)
+Este módulo está compuesto por los archivos `Analisis.cpp` y su encabezado `Analisis.h` (depende de la estructura Puerto definida en Escaneo.h)
 
 ## Cómo usar el módulo de Escaneo
 El modulo de escaneo se utiliza dentro del programa principal para obtener el estado real de los puertos TCP, el como funciona es mediante la función "inicializarRed()" antes de comenzar el escaneo para poder preparar la librería Winsock.
