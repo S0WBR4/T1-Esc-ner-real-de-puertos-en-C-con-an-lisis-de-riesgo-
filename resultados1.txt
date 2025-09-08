@@ -1,0 +1,20 @@
+Reporte de Escaneo de Puertos (TCP)
+Fecha/Hora: 2025-09-07 20:54:02
+Objetivo: 192.168.1.72
+Sensibilidad: 1 (1=baja,2=media,3=alta)
+
+PUERTO    SERVICIO      ESTADO      SOSPECHOSO
+-----------------------------------------------
+53        DNS           Filtrado    NO
+80        HTTP          Filtrado    NO
+110       POP3          Filtrado    NO
+139       desconocido   Abierto     NO
+143       IMAP          Filtrado    NO
+443       HTTPS         Filtrado    NO
+548       desconocido   Filtrado    NO
+3389      RDP           Filtrado    NO
+
+Total puertos: 8 | Marcados sospechosos: 0
+
+--- Puertos sospechosos (detalles) ---
+Ninguno
