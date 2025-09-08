@@ -6,7 +6,7 @@
 - [Módulos](#módulos)
   - [Escaneo (Angel David Morales Palomo)](#escaneo-angel-david-morales-palomo)
   - [Registro (Juan Angel Rodriguez Bulnes)](#registro-juan-angel-rodriguez-bulnes)
-  - [Análisis (Sofia Flores Martinez Cisneros)](#análisis-sofia-flores-martinez-cisneros)
+  - [Análisis (Sofia Martinez Cisneros)](#análisis-sofia-martinez-cisneros)
 - [Cómo usar el módulo de Escaneo](#cómo-usar-el-módulo-de-escaneo)
 - [Cómo usar el módulo de Registro](#cómo-usar-el-módulo-de-registro)
 - [Cómo usar el módulo de Análisis](#cómo-usar-el-módulo-de-análisis)
@@ -23,7 +23,7 @@ El objetivo principal es aplicar conocimientos de:
 ## Integrantes y Responsabilidades
 - Angel David Morales Palomo — Módulo de Escaneo (`Escaneo.cpp` y `Escaneo.h`)
 - Juan Angel Rodriguez Bulnes — Módulo de Registro (`Registro.cpp` y `Registro.h`)
-- Sofia Flores Martinez Cisneros — Módulo de Análisis (`Analisis.cpp` y `Analisis.h`)
+- Sofia Martinez Cisneros — Módulo de Análisis (`Analisis.cpp` y `Analisis.h`)
 
 ## Módulos
 
@@ -51,7 +51,7 @@ Archivos relacionados:
 - `Registro.cpp` — Implementación del módulo
 - `Registro.h` — Declaración de funciones públicas para generar el reporte
 
-### Análisis (Sofia Flores Martinez Cisneros)
+### Análisis (Sofia Martinez Cisneros)
 *(Aquí Sofia agregará su descripción del módulo)*
 
 ## Cómo usar el módulo de Escaneo
