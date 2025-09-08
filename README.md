@@ -28,7 +28,15 @@ El objetivo principal es aplicar conocimientos de:
 ## Módulos
 
 ### Escaneo (Angel David Morales Palomo)
-*(Aquí Angel David agregará su descripción del módulo)*
+Mi parte para este proyecto fue el implementar los mudulos de Escaneo, el cual es encargado de realizar la verificación en tiempo real de los puertos TCP de cualquier dirección IP de la red como objetivo mediante un entorno a base de Windows.
+
+Funciones Principales:
+Lo primero que hace este modulo es inicializar y finalizar el uso de la librería de Winsock que sirve para habilitar las conexiones a la red, después de eso valida la dirección IP que es ingresada por el usuario y pregunta ya sea por el rango de puertos de su elección o ciertos rangos específicos separados por una coma. Tambien establece conexión TCP en cada uno de los puertos para clasificar el estado de este, por ejemplo "Abierto", "Cerrado", "Filtrado" y por ultimo, Registra los resultados en un formato que incluye el numero del puerto analizado, el estado en el que se encuentra y la marca de si es sospechoso o no. 
+Los puertos que son seleccionados como sospechosos son aquellos que se supone que no deben estar abiertos normalmente, que luego esto se analiza en otro modulo.  
+
+Archivos relacionados con el modulo:
+-`Escaneo.cpp` (Este archivo tiene la lógica de conexión y el escaneo de puertos)
+-`Escaneo.h` (Aquí esta básicamente la estructura y las funciones publicas del puerto.)
 
 ### Registro (Juan Angel Rodriguez Bulnes)
 Mi responsabilidad en el proyecto fue implementar el módulo de **Registro**, encargado de generar el reporte final del escaneo en un archivo de texto.
@@ -47,6 +55,16 @@ Archivos relacionados:
 *(Aquí Sofia agregará su descripción del módulo)*
 
 ## Cómo usar el módulo de Escaneo
+El modulo de escaneo se utiliza dentro del programa principal para obtener el estado real de los puertos TCP, el como funciona es mediante la función "inicializarRed()" antes de comenzar el escaneo para poder preparar la librería Winsock.
+
+Después llama a la función "escanearPuertos()" después de haber pasado por los parámetros:
+*Dirección IP
+*Puerto Inicial y Final ó selección de puertos
+*Tiempo de espera (Que por predeterminado le puse que solo esperara 800ms por cada puerto que escane como máximo)
+
+Después de esto, este modulo revisa los resultados en la estructura de "Puerto" donde la función "finalizarRed()" es llamada para liberar los recursos de la misma red y en automático valida la dirección IP ingresada, verifica cada puerto que fue seleccionado o cada puerto del rango especificado y checa la clasificación del estado de cada puerto.
+
+Es necesario decir que realmente el modulo no requiere una configuración adicional, solo es de asegurare de inicializar la red antes de escanear y cerrarla al final del proceso.
 ## Cómo usar el módulo de Registro
 El módulo de **Registro** se utiliza dentro del programa principal después de realizar el escaneo de puertos y el análisis de sospechosos.
 
